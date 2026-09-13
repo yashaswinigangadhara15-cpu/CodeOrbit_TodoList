@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app-card">
+    <header class="app-header">
+      <h1>My To-Do List</h1>
+      <p class="subtitle">Stay organized, one task at a time.</p>
+    </header>
+
+    <form id="task-form" class="task-form" novalidate>
+      <label for="task-input" class="visually-hidden">New task</label>
+      <input
+        type="text"
+        id="task-input"
+        name="task-input"
+        placeholder="What do you need to do?"
+        autocomplete="off"
+      />
+      <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+
+    <p id="input-error" class="input-error" role="alert" hidden>
+      Please enter a task before adding it.
+    </p>
+
+    <section class="list-controls">
+      <p id="task-counter" class="task-counter">0 tasks remaining</p>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="active">Active</button>
+        <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+    </section>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>
+      Nothing here yet. Add your first task above.
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
